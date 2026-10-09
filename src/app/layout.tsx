@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Hind_Siliguri } from "next/font/google";
 
+import Navbar from "@/components/layout/Navbar";
+
 import "./globals.css";
 
 const hindSiliguri = Hind_Siliguri({
@@ -18,14 +20,20 @@ export const metadata: Metadata = {
     "বাংলাদেশের নিত্যপ্রয়োজনীয় পণ্যের বর্তমান বাজারদর এক নজরে দেখুন।",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
   return (
     <html lang="bn" className={`${hindSiliguri.variable} antialiased`}>
-      <body>{children}</body>
+      <body>
+        <Navbar />
+
+        <main>{children}</main>
+      </body>
     </html>
   );
-}
+};
+
+export default RootLayout;

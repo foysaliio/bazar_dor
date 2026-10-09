@@ -5,22 +5,21 @@
 @theme {
   --font-sans: var(--font-hind-siliguri);
 
-  --color-bazar-bg: #f7f8f4;
-  --color-bazar-surface: #ffffff;
-  --color-bazar-primary: #1d271f;
-  --color-bazar-primary-soft: #2f3c32;
+  --color-bazar-bg: #f0f5f0;
+  --color-bazar-surface: #fafcfa;
+
+  --color-bazar-primary: #05893e;
+  --color-bazar-primary-hover: #047f39;
 
   --color-bazar-text: #1d271f;
+  --color-bazar-light: #f0f5f0;
   --color-bazar-muted: #6f776f;
-  --color-bazar-border: #dfe4dd;
+
+  --color-bazar-soft: #edf8f0;
+  --color-bazar-border: #e1e8e1;
 
   --color-bazar-success: #1a9951;
-  --color-bazar-success-soft: #e9f6ee;
-
   --color-bazar-danger: #d03739;
-  --color-bazar-danger-soft: #fcecec;
-
-  --color-bazar-neutral: #858c86;
 }
 
 html {
