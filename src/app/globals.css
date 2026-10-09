@@ -1,26 +1,35 @@
 @import "tailwindcss";
+@import "@heroui/styles";
+@plugin "daisyui";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --font-sans: var(--font-hind-siliguri);
+
+  --color-bazar-bg: #f7f8f4;
+  --color-bazar-surface: #ffffff;
+  --color-bazar-primary: #1d271f;
+  --color-bazar-primary-soft: #2f3c32;
+
+  --color-bazar-text: #1d271f;
+  --color-bazar-muted: #6f776f;
+  --color-bazar-border: #dfe4dd;
+
+  --color-bazar-success: #1a9951;
+  --color-bazar-success-soft: #e9f6ee;
+
+  --color-bazar-danger: #d03739;
+  --color-bazar-danger-soft: #fcecec;
+
+  --color-bazar-neutral: #858c86;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background: var(--color-bazar-bg);
+  color: var(--color-bazar-text);
+  font-family: var(--font-hind-siliguri), sans-serif;
 }
