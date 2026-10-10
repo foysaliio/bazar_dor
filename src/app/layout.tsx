@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Hind_Siliguri } from "next/font/google";
+import { Noto_Sans_Bengali } from "next/font/google";
 
 import Navbar from "@/components/layout/Navbar";
 
 import "./globals.css";
 
-const hindSiliguri = Hind_Siliguri({
-  variable: "--font-hind-siliguri",
+const notoSansBengali = Noto_Sans_Bengali({
+  variable: "--font-noto-bengali",
   subsets: ["bengali", "latin"],
   weight: ["400", "500", "600", "700"],
 });
@@ -26,7 +26,7 @@ interface RootLayoutProps {
 
 const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
   return (
-    <html lang="bn" className={`${hindSiliguri.variable} antialiased`}>
+    <html lang="bn" className={`${notoSansBengali.variable} antialiased`}>
       <body>
         <Navbar />
 
