@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
 import type { MouseEvent, ReactNode } from "react";
 
 interface HomeLogoLinkProps {
@@ -9,20 +8,17 @@ interface HomeLogoLinkProps {
 }
 
 const HomeLogoLink = ({ children }: HomeLogoLinkProps) => {
-  const pathname = usePathname();
-  const router = useRouter();
-
   const handleClick = (event: MouseEvent<HTMLAnchorElement>) => {
-    if (pathname !== "/") return;
+    if (window.location.pathname === "/") {
+      event.preventDefault();
 
-    event.preventDefault();
+      window.history.replaceState(null, "", "/");
 
-    router.replace("/");
-
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }
   };
 
   return (

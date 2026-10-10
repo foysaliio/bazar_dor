@@ -26,6 +26,7 @@ const ProductCard = ({ product }: ProductCardProps) => {
   return (
     <Link
       href={`/product/${product.slug}`}
+      scroll={true}
       className="relative min-h-[128px] rounded-2xl border border-bazar-border bg-bazar-surface p-4 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md"
     >
       <div className="flex items-center gap-3">

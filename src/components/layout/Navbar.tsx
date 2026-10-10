@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
 import HomeLogoLink from "./HomeLogoLink";
 
 import { getCategories, getProducts } from "@/lib/api";
@@ -63,7 +64,9 @@ const Navbar = async () => {
         </div>
 
         {/* Category Menu */}
-        <CategoryNav categories={categories} />
+        <Suspense fallback={<div className="h-[46px] bg-bazar-surface" />}>
+          <CategoryNav categories={categories} />
+        </Suspense>
       </header>
 
       {/* Price Ticker will scroll normally */}
