@@ -1,3 +1,4 @@
+import FallingPrices from "@/components/home/FallingPrices";
 import Hero from "@/components/home/Hero";
 import RisingPrices from "@/components/home/RisingPrices";
 import { getProducts } from "@/lib/api";
@@ -10,6 +11,8 @@ const HomePage = async () => {
       <Hero />
 
       <RisingPrices products={products} />
+
+      <FallingPrices products={products} />
     </main>
   );
 };
