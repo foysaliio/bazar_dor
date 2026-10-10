@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import HomeLogoLink from "./HomeLogoLink";
 
 import { getCategories, getProducts } from "@/lib/api";
 
@@ -21,7 +22,7 @@ const Navbar = async () => {
         <div className="border-b border-[#e1e8e179]">
           <div className="mx-auto flex h-[69px] w-full max-w-[1120px] items-center justify-between px-4 lg:px-0">
             {/* Brand */}
-            <Link href="/" className="flex items-center gap-3">
+            <HomeLogoLink>
               <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-bazar-primary">
                 <Image
                   src="/assets/images/logo-icon.png"
@@ -40,7 +41,7 @@ const Navbar = async () => {
 
                 <BanglaDate />
               </div>
-            </Link>
+            </HomeLogoLink>
 
             {/* Auth */}
             <div className="flex items-center gap-3">
