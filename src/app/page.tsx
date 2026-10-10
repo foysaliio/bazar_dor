@@ -1,3 +1,4 @@
+import AllProducts from "@/components/home/AllProducts";
 import FallingPrices from "@/components/home/FallingPrices";
 import Hero from "@/components/home/Hero";
 import RisingPrices from "@/components/home/RisingPrices";
@@ -13,6 +14,8 @@ const HomePage = async () => {
       <RisingPrices products={products} />
 
       <FallingPrices products={products} />
+
+      <AllProducts products={products} />
     </main>
   );
 };

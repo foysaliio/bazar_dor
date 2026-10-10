@@ -21,6 +21,7 @@ const formatBanglaNumber = (value: number) => {
 
 const ProductCard = ({ product }: ProductCardProps) => {
   const isUp = product.change.dir === "up";
+  const isDown = product.change.dir === "down";
 
   return (
     <Link
@@ -55,10 +56,15 @@ const ProductCard = ({ product }: ProductCardProps) => {
         className={`absolute right-4 bottom-4 rounded-full px-2.5 py-1 text-[11px] font-semibold ${
           isUp
             ? "bg-red-50 text-bazar-danger"
-            : "bg-green-50 text-bazar-success"
+            : isDown
+              ? "bg-green-50 text-bazar-success"
+              : "bg-gray-100 text-bazar-muted"
         }`}
       >
-        {isUp ? "▲" : "▼"} {formatBanglaNumber(Math.abs(product.change.pct))}%
+        {isUp && "▲ "}
+        {isDown && "▼ "}
+        {!isUp && !isDown && "• "}
+        {formatBanglaNumber(Math.abs(product.change.pct))}%
       </div>
     </Link>
   );
