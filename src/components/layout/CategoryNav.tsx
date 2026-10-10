@@ -14,8 +14,8 @@ const CategoryNav = ({ categories }: CategoryNavProps) => {
 
   return (
     <nav className="bg-bazar-surface">
-      <div className="mx-auto w-full max-w-280 overflow-x-auto px-4 py-1 sm:px-6">
-        <div className="flex h-11.5 min-w-max items-center gap-2">
+      <div className="mx-auto w-full max-w-[1120px] overflow-x-auto px-4 lg:px-0">
+        <div className="flex h-[48px] min-w-max items-center gap-2">
           <Link
             href="/"
             className={`rounded-lg px-3 py-2 text-[13px] font-medium whitespace-nowrap transition-all duration-300 ${

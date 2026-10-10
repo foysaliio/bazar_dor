@@ -17,7 +17,7 @@ const Navbar = async () => {
     <header className="bg-bazar-surface">
       {/* Top Navbar */}
       <div className="border-b border-[#e1e8e179]">
-        <div className="mx-auto flex h-18 w-full max-w-280 items-center justify-between px-4 sm:px-6">
+        <div className="mx-auto flex h-[69px] w-full max-w-[1120px] items-center justify-between px-4 lg:px-0">
           {/* Brand */}
           <Link href="/" className="flex items-center gap-3">
             <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-bazar-primary">

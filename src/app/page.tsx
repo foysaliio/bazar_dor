@@ -1,12 +1,12 @@
+import Hero from "@/components/home/Hero";
+
 const HomePage = () => {
   return (
     <main className="min-h-screen bg-bazar-bg">
-      <section className="mx-auto w-full max-w-6xl px-4 py-10 sm:px-6">
-        <h1 className="text-3xl font-bold text-bazar-primary">বাজার দর</h1>
+      <Hero />
 
-        <p className="mt-2 text-bazar-muted">
-          বাংলাদেশের নিত্যপ্রয়োজনীয় পণ্যের দাম এক নজরে।
-        </p>
+      <section id="সব-পণ্য" className="mx-auto w-full max-w-280 px-4 lg:px-0">
+        {/* Next home sections will come here */}
       </section>
     </main>
   );
