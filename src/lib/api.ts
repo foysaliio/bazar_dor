@@ -16,6 +16,16 @@ export const getCategories = async (): Promise<Category[]> => {
   return response.json();
 };
 
+export const getCategoryBySlug = async (
+  slug: string,
+): Promise<Category | null> => {
+  const categories = await getCategories();
+
+  const category = categories.find((item) => item.slug === slug);
+
+  return category ?? null;
+};
+
 export const getProducts = async (): Promise<Product[]> => {
   const response = await fetch(`${BASE_URL}/products`, {
     next: {
@@ -28,6 +38,14 @@ export const getProducts = async (): Promise<Product[]> => {
   }
 
   return response.json();
+};
+
+export const getProductsByCategory = async (
+  slug: string,
+): Promise<Product[]> => {
+  const products = await getProducts();
+
+  return products.filter((product) => product.category === slug);
 };
 
 export const getProductBySlug = async (
