@@ -34,23 +34,23 @@ const NavbarAuth = () => {
 
   if (isPending) {
     return (
-      <div className="h-10 w-[150px] animate-pulse rounded-lg bg-bazar-soft" />
+      <div className="h-9 w-[90px] animate-pulse rounded-lg bg-bazar-soft sm:h-10 sm:w-[150px]" />
     );
   }
 
   if (!session?.user) {
     return (
-      <div className="flex items-center gap-3">
+      <div className="flex shrink-0 items-center gap-1.5 sm:gap-3">
         <Link
           href="/signin"
-          className="rounded-lg px-4 py-2 text-sm font-medium text-bazar-text transition-all duration-300 hover:bg-bazar-soft hover:text-bazar-primary"
+          className="whitespace-nowrap rounded-lg px-2.5 py-2 text-xs font-medium text-bazar-text transition-all duration-300 hover:bg-bazar-soft hover:text-bazar-primary sm:px-4 sm:text-sm"
         >
           সাইন ইন
         </Link>
 
         <Link
           href="/signup"
-          className="rounded-lg bg-bazar-primary px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-bazar-primary-hover hover:shadow-md"
+          className="whitespace-nowrap rounded-lg bg-bazar-primary px-3 py-2 text-xs font-medium text-white shadow-sm transition-all duration-300 hover:bg-bazar-primary-hover hover:shadow-md sm:px-5 sm:py-2.5 sm:text-sm"
         >
           সাইন আপ
         </Link>
@@ -61,11 +61,11 @@ const NavbarAuth = () => {
   const firstLetter = session.user.name?.trim().charAt(0).toUpperCase() || "U";
 
   return (
-    <div className="relative">
+    <div className="relative shrink-0">
       <button
         type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex h-10 cursor-pointer items-center gap-2 rounded-xl px-2.5 transition-all duration-300 hover:bg-bazar-soft"
+        className="flex h-10 cursor-pointer items-center gap-1.5 rounded-xl px-1.5 transition-all duration-300 hover:bg-bazar-soft sm:gap-2 sm:px-2.5"
       >
         {/* Avatar */}
         <div className="grid size-8 shrink-0 place-items-center overflow-hidden rounded-full bg-bazar-primary">
@@ -85,12 +85,12 @@ const NavbarAuth = () => {
         </div>
 
         {/* Name */}
-        <span className="hidden max-w-[130px] truncate text-sm font-medium text-bazar-text sm:block">
+        <span className="hidden max-w-[130px] truncate whitespace-nowrap text-sm font-medium text-bazar-text sm:block">
           {session.user.name}
         </span>
 
         <ChevronDown
-          size={15}
+          size={14}
           className={`shrink-0 text-bazar-muted transition-transform duration-300 ${
             isOpen ? "rotate-180" : ""
           }`}

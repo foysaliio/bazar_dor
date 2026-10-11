@@ -3,7 +3,7 @@
 import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import type { FormEvent } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
@@ -16,12 +16,10 @@ const SignInPage = () => {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
   const [showPassword, setShowPassword] = useState(false);
-
   const [isLoading, setIsLoading] = useState(false);
 
-  const [redirectPath, setRedirectPath] = useState("/");
+  const redirectPathRef = useRef("/");
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -30,7 +28,7 @@ const SignInPage = () => {
     const reason = params.get("reason");
 
     if (redirect?.startsWith("/")) {
-      setRedirectPath(redirect);
+      redirectPathRef.current = redirect;
     }
 
     if (reason === "protected") {
@@ -54,27 +52,26 @@ const SignInPage = () => {
 
     if (error) {
       toast.error(error.message || "ইমেইল অথবা পাসওয়ার্ড সঠিক নয়");
-
       return;
     }
 
     toast.success("সফলভাবে সাইন ইন হয়েছে");
 
-    router.push(redirectPath);
+    router.push(redirectPathRef.current);
     router.refresh();
   };
 
   const handleGoogleSignIn = async () => {
     await authClient.signIn.social({
       provider: "google",
-      callbackURL: redirectPath,
+      callbackURL: redirectPathRef.current,
     });
   };
 
   const handleGitHubSignIn = async () => {
     await authClient.signIn.social({
       provider: "github",
-      callbackURL: redirectPath,
+      callbackURL: redirectPathRef.current,
     });
   };
 
