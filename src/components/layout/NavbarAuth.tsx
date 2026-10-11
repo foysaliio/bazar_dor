@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import toast from "react-hot-toast";
 
 import { authClient } from "@/lib/auth-client";
 
@@ -16,9 +17,16 @@ const NavbarAuth = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleSignOut = async () => {
-    await authClient.signOut();
+    const { error } = await authClient.signOut();
+
+    if (error) {
+      toast.error("সাইন আউট করা যায়নি");
+      return;
+    }
 
     setIsOpen(false);
+
+    toast.success("সফলভাবে সাইন আউট হয়েছে");
 
     router.push("/");
     router.refresh();
@@ -59,7 +67,7 @@ const NavbarAuth = () => {
         onClick={() => setIsOpen((prev) => !prev)}
         className="flex h-10 cursor-pointer items-center gap-2 rounded-xl px-2.5 transition-all duration-300 hover:bg-bazar-soft"
       >
-        {/* User Avatar */}
+        {/* Avatar */}
         <div className="grid size-8 shrink-0 place-items-center overflow-hidden rounded-full bg-bazar-primary">
           {session.user.image ? (
             <Image
@@ -76,7 +84,7 @@ const NavbarAuth = () => {
           )}
         </div>
 
-        {/* User Name */}
+        {/* Name */}
         <span className="hidden max-w-[130px] truncate text-sm font-medium text-bazar-text sm:block">
           {session.user.name}
         </span>

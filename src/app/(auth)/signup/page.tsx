@@ -7,7 +7,7 @@ import { useState } from "react";
 import type { FormEvent } from "react";
 import { FaGithub } from "react-icons/fa";
 import { FcGoogle } from "react-icons/fc";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 import { authClient } from "@/lib/auth-client";
 
@@ -20,6 +20,7 @@ const SignUpPage = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
 
   const [showPassword, setShowPassword] = useState(false);
+
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   const [isLoading, setIsLoading] = useState(false);
@@ -44,6 +45,7 @@ const SignUpPage = () => {
 
     if (error) {
       toast.error(error.message || "অ্যাকাউন্ট তৈরি করা যায়নি");
+
       return;
     }
 
@@ -69,8 +71,6 @@ const SignUpPage = () => {
 
   return (
     <main className="bg-bazar-bg px-4 py-8">
-      <Toaster position="top-center" />
-
       <div className="mx-auto w-full max-w-[440px]">
         {/* Heading */}
         <div className="text-center">
@@ -150,7 +150,7 @@ const SignUpPage = () => {
                 <button
                   type="button"
                   onClick={() => setShowPassword((prev) => !prev)}
-                  className="absolute top-1/2 right-3 -translate-y-1/2 text-bazar-muted transition-colors duration-300 hover:text-bazar-primary"
+                  className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-bazar-muted transition-colors duration-300 hover:text-bazar-primary"
                   aria-label="পাসওয়ার্ড দেখুন"
                 >
                   {showPassword ? <EyeOff size={17} /> : <Eye size={17} />}
@@ -182,7 +182,7 @@ const SignUpPage = () => {
                 <button
                   type="button"
                   onClick={() => setShowConfirmPassword((prev) => !prev)}
-                  className="absolute top-1/2 right-3 -translate-y-1/2 text-bazar-muted transition-colors duration-300 hover:text-bazar-primary"
+                  className="absolute top-1/2 right-3 -translate-y-1/2 cursor-pointer text-bazar-muted transition-colors duration-300 hover:text-bazar-primary"
                   aria-label="পাসওয়ার্ড নিশ্চিতকরণ দেখুন"
                 >
                   {showConfirmPassword ? (
@@ -246,7 +246,7 @@ const SignUpPage = () => {
           </p>
         </div>
 
-        {/* Home Button */}
+        {/* Home */}
         <div className="mt-5 flex justify-center">
           <Link
             href="/"

@@ -1,8 +1,10 @@
-import { notFound } from "next/navigation";
+import { headers } from "next/headers";
+import { notFound, redirect } from "next/navigation";
 
 import ProductDetailsContent from "@/components/product/ProductDetailsContent";
 import ScrollToTop from "@/components/product/ScrollToTop";
 import { getProductBySlug } from "@/lib/api";
+import { auth } from "@/lib/auth";
 
 export const instant = false;
 
@@ -14,6 +16,18 @@ interface ProductDetailsPageProps {
 
 const ProductDetailsPage = async ({ params }: ProductDetailsPageProps) => {
   const { slug } = await params;
+
+  const session = await auth.api.getSession({
+    headers: await headers(),
+  });
+
+  if (!session) {
+    redirect(
+      `/signin?redirect=${encodeURIComponent(
+        `/product/${slug}`,
+      )}&reason=protected`,
+    );
+  }
 
   const product = await getProductBySlug(slug);
 
