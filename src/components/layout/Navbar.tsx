@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Suspense } from "react";
-import HomeLogoLink from "./HomeLogoLink";
 
 import { getCategories, getProducts } from "@/lib/api";
 
 import BanglaDate from "./BanglaDate";
 import CategoryNav from "./CategoryNav";
+import HomeLogoLink from "./HomeLogoLink";
+import NavbarAuth from "./NavbarAuth";
 import PriceTicker from "./PriceTicker";
 
 const Navbar = async () => {
@@ -17,7 +17,6 @@ const Navbar = async () => {
 
   return (
     <>
-      {/* Sticky Navbar + Category Menu */}
       <header className="sticky top-0 z-50 bg-bazar-surface">
         {/* Top Navbar */}
         <div className="border-b border-[#e1e8e179]">
@@ -44,22 +43,8 @@ const Navbar = async () => {
               </div>
             </HomeLogoLink>
 
-            {/* Auth */}
-            <div className="flex items-center gap-3">
-              <Link
-                href="/signin"
-                className="rounded-lg px-4 py-2 text-sm font-medium text-bazar-text transition-all duration-300 hover:bg-bazar-soft hover:text-bazar-primary"
-              >
-                সাইন ইন
-              </Link>
-
-              <Link
-                href="/signup"
-                className="rounded-lg bg-bazar-primary px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-300 hover:bg-bazar-primary-hover hover:shadow-md"
-              >
-                সাইন আপ
-              </Link>
-            </div>
+            {/* Authentication */}
+            <NavbarAuth />
           </div>
         </div>
 
@@ -69,7 +54,6 @@ const Navbar = async () => {
         </Suspense>
       </header>
 
-      {/* Price Ticker will scroll normally */}
       <PriceTicker products={products} />
     </>
   );

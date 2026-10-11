@@ -49,7 +49,8 @@ const SignUpPage = () => {
 
     toast.success("অ্যাকাউন্ট সফলভাবে তৈরি হয়েছে");
 
-    router.push("/signin");
+    router.push("/");
+    router.refresh();
   };
 
   const handleGoogleSignIn = async () => {
@@ -197,7 +198,7 @@ const SignUpPage = () => {
             <button
               type="submit"
               disabled={isLoading}
-              className="flex h-10 w-full items-center justify-center rounded-lg bg-bazar-primary text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-bazar-primary-hover hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
+              className="flex h-10 w-full cursor-pointer items-center justify-center rounded-lg bg-bazar-primary text-sm font-semibold text-white shadow-sm transition-all duration-300 hover:bg-bazar-primary-hover hover:shadow-md disabled:cursor-not-allowed disabled:opacity-60"
             >
               {isLoading ? "অ্যাকাউন্ট তৈরি হচ্ছে..." : "অ্যাকাউন্ট তৈরি করুন"}
             </button>
@@ -217,7 +218,7 @@ const SignUpPage = () => {
             <button
               type="button"
               onClick={handleGoogleSignIn}
-              className="flex h-10 items-center justify-center gap-2 rounded-lg border border-bazar-border bg-white text-xs font-medium text-bazar-text transition-all duration-300 hover:border-bazar-primary hover:bg-bazar-soft hover:shadow-sm cursor-pointer"
+              className="flex h-10 cursor-pointer items-center justify-center gap-2 rounded-lg border border-bazar-border bg-white text-xs font-medium text-bazar-text transition-all duration-300 hover:border-bazar-primary hover:bg-bazar-soft hover:shadow-sm"
             >
               <FcGoogle size={18} />
               Google দিয়ে চালিয়ে যান
@@ -226,7 +227,7 @@ const SignUpPage = () => {
             <button
               type="button"
               onClick={handleGitHubSignIn}
-              className="flex h-10 items-center justify-center gap-2 rounded-lg border border-bazar-border bg-white text-xs font-medium text-bazar-text transition-all duration-300 hover:border-bazar-primary hover:bg-bazar-soft hover:shadow-sm cursor-pointer"
+              className="flex h-10 cursor-pointer items-center justify-center gap-2 rounded-lg border border-bazar-border bg-white text-xs font-medium text-bazar-text transition-all duration-300 hover:border-bazar-primary hover:bg-bazar-soft hover:shadow-sm"
             >
               <FaGithub size={18} />
               GitHub দিয়ে চালিয়ে যান
