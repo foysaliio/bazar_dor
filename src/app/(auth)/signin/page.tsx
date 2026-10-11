@@ -143,7 +143,7 @@ const SignInPage = () => {
             <button
               type="button"
               onClick={handleGoogleSignIn}
-              className="flex h-10 items-center justify-center gap-2 rounded-lg border border-bazar-border bg-white text-xs font-medium text-bazar-text transition-all duration-300 hover:border-bazar-primary hover:bg-bazar-soft hover:shadow-sm"
+              className="flex h-10 items-center justify-center gap-2 rounded-lg border border-bazar-border bg-white text-xs font-medium text-bazar-text transition-all duration-300 hover:border-bazar-primary hover:bg-bazar-soft hover:shadow-sm cursor-pointer"
             >
               <FcGoogle size={18} />
               Google দিয়ে চালিয়ে যান
@@ -152,7 +152,7 @@ const SignInPage = () => {
             <button
               type="button"
               onClick={handleGitHubSignIn}
-              className="flex h-10 items-center justify-center gap-2 rounded-lg border border-bazar-border bg-white text-xs font-medium text-bazar-text transition-all duration-300 hover:border-bazar-primary hover:bg-bazar-soft hover:shadow-sm"
+              className="flex h-10 items-center justify-center gap-2 rounded-lg border border-bazar-border bg-white text-xs font-medium text-bazar-text transition-all duration-300 hover:border-bazar-primary hover:bg-bazar-soft hover:shadow-sm cursor-pointer"
             >
               <FaGithub size={18} />
               GitHub দিয়ে চালিয়ে যান
