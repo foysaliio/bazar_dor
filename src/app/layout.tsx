@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_Bengali } from "next/font/google";
 
+import Footer from "@/components/layout/Footer";
 import Navbar from "@/components/layout/Navbar";
 import ToastProvider from "@/components/providers/ToastProvider";
 
@@ -28,12 +29,14 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: Readonly<RootLayoutProps>) => {
   return (
     <html lang="bn" className={`${notoSansBengali.variable} antialiased`}>
-      <body>
+      <body className="flex min-h-dvh flex-col">
         <ToastProvider />
 
         <Navbar />
 
-        <main>{children}</main>
+        <div className="flex-1 bg-bazar-bg [&>main]:min-h-0">{children}</div>
+
+        <Footer />
       </body>
     </html>
   );
