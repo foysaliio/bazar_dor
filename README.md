@@ -1,164 +1,202 @@
 <div align="center">
 
-# Bazar Dor
+# BAZAR DOR
 
-### A modern Bengali market price tracking platform
+### Daily Market Price Tracker & Comparison Platform
 
-Track essential product prices, compare market-based rates, monitor price movements, and explore daily বাজার দর through a clean, responsive experience.
+A responsive Bengali market price tracking app built with Next.js, TypeScript, Better Auth, and MongoDB Atlas.
 
-**Live Application:** https://bazardor-market.vercel.app
+[**Live Demo**](https://bazardor-market.vercel.app)
+
+<br />
+
+![Next.js](https://img.shields.io/badge/Next.js-16-000000?style=for-the-badge&logo=nextdotjs&logoColor=white)
+![React](https://img.shields.io/badge/React-19-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
+![TypeScript](https://img.shields.io/badge/TypeScript-5-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)
+![MongoDB](https://img.shields.io/badge/MongoDB-Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white)
+![Better Auth](https://img.shields.io/badge/Better_Auth-Authentication-111827?style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Vercel-Deployed-000000?style=for-the-badge&logo=vercel&logoColor=white)
 
 </div>
 
 ---
 
-## Overview
+## About Bazar Dor
 
-**Bazar Dor** is a production-ready Bengali market price tracking application built with **Next.js, TypeScript, Better Auth, and MongoDB Atlas**.
+**Bazar Dor** is a Bengali daily market price tracking and comparison platform built around a simple experience:
 
-The platform presents daily prices of essential products in a clear Bengali interface while allowing users to explore categories, compare market-level pricing, track price increases and decreases, and access detailed product information through authenticated routes.
+**browse → compare → inspect → track**
 
-The project combines modern frontend architecture, secure authentication, dynamic API data, responsive design, and production deployment into a complete full-stack Next.js application.
+Users can explore essential products, monitor price increases and decreases, browse category-based listings, compare prices across markets, and view detailed pricing information for individual products.
+
+The application also includes secure authentication, protected product details, user profile management, responsive layouts, loading states, and production-ready deployment.
+
+---
+
+## What You Can Do
+
+| Feature               | Description                                          |
+| --------------------- | ---------------------------------------------------- |
+| **Browse Products**   | Explore essential daily products from the market API |
+| **Track Prices**      | View current product prices in Bengali formatting    |
+| **Monitor Changes**   | Identify rising, falling, and unchanged prices       |
+| **Browse Categories** | Explore products through dedicated category pages    |
+| **Sort Products**     | Sort prices from low to high or high to low          |
+| **Compare Markets**   | Review minimum, maximum, and average market prices   |
+| **View Details**      | Open detailed product and market information         |
+| **Create an Account** | Register using email and password                    |
+| **Social Login**      | Continue with Google or GitHub                       |
+| **Manage Profile**    | View and update authenticated user information       |
+
+---
 
 ## Core Experience
 
-| Capability          | Description                                           |
-| ------------------- | ----------------------------------------------------- |
-| Daily Market Prices | View current prices of essential products             |
-| Price Movement      | Identify increasing, decreasing, and unchanged prices |
-| Category Browsing   | Explore products through organized categories         |
-| Smart Sorting       | Sort prices from low to high or high to low           |
-| Market Comparison   | Compare minimum, maximum, and average prices          |
-| Protected Details   | Product details require authentication                |
-| Multi-provider Auth | Email/password, Google, and GitHub authentication     |
-| User Profile        | View and update authenticated user information        |
-| Responsive UI       | Optimized for mobile, tablet, and desktop             |
-| Production Ready    | Deployed and verified on Vercel                       |
+### Market Dashboard
 
----
+The homepage provides a complete overview of current market activity.
 
-## Key Features
+Users can see:
 
-### Market Price Dashboard
+- Daily market price ticker
+- Current Bengali date
+- Top rising prices
+- Top falling prices
+- All available products
+- Price change percentage
+- Product category and unit
+- Bengali formatted numbers
 
-- Daily pricing for essential consumer products
-- Bengali product names
-- Bengali numeric formatting
-- Product units including kilogram, litre, dozen, and piece
-- Price increase and decrease indicators
-- Scrolling live-style price ticker
-- Dedicated rising and falling price sections
+The dashboard is designed to surface the most important market information without requiring users to open individual products.
 
-### Product Discovery
+### Category Browsing
 
-- Browse all available products
-- Category-based product navigation
-- Active category highlighting
-- Responsive horizontal category navigation
-- Sort products by:
-  - Default
-  - Price low to high
-  - Price high to low
+Products are organized into dedicated market categories.
+
+Each category page includes:
+
+- Category name
+- Category icon
+- Total product count
+- Category-specific products
+- Default sorting
+- Price low to high sorting
+- Price high to low sorting
+
+The active category is highlighted in the navigation for easier browsing.
 
 ### Product Details
 
-Each protected product page provides:
+Each product has a protected details page containing:
 
+- Product name
+- Category
+- Product unit
 - Current price
-- Price change percentage
-- Product category and unit
+- Price movement percentage
 - Minimum market price
 - Maximum market price
 - Average market price
-- Market-wise price comparison
-- Market and division information
+- Market-wise price table
+- Market division
 - Related category navigation
+
+Users must be authenticated before accessing product details.
 
 ### Authentication
 
-Authentication is powered by **Better Auth** and persisted through **MongoDB Atlas**.
+Bazar Dor uses **Better Auth** with **MongoDB Atlas** for authentication and persistent user data.
 
-Supported authentication methods:
+Users can authenticate through:
 
-- Email and password registration
-- Email and password sign in
-- Google OAuth
-- GitHub OAuth
-- Secure session handling
-- Authenticated Navbar state
+- Email and password
+- Google
+- GitHub
+
+Authentication also powers:
+
+- Secure user sessions
+- Protected product routes
+- Protected profile routes
+- Authentication-aware Navbar
 - Sign out functionality
-- Success and error notifications
+- Redirect-back behavior after login
 
-### Protected Routes
+### User Profile
 
-Product details and profile pages are protected.
+Authenticated users have access to a dedicated profile page.
 
-```text
-Unauthenticated User
-        ↓
-Protected Product
-        ↓
-Sign In Required
-        ↓
-Authentication
-        ↓
-Original Product Page
-```
+Users can:
 
-Users are returned to the originally requested product after successful authentication.
+- View their profile name
+- View their account email
+- View Google or GitHub profile images
+- See a generated avatar for email accounts
+- Update their display name
+- Persist profile changes in MongoDB
 
-### Profile Management
-
-Authenticated users can:
-
-- View account information
-- View profile image or generated avatar
-- View account email
-- Update display name
-- Persist changes in MongoDB
-- See profile updates reflected in the Navbar
+Updated profile information is reflected directly in the Navbar.
 
 ---
 
-## Application Architecture
+## Thoughtful UX
 
-```text
-                       ┌─────────────────┐
-                       │     Bazar Dor   │
-                       └────────┬────────┘
-                                │
-              ┌─────────────────┴─────────────────┐
-              │                                   │
-        Public Experience                  Authenticated Experience
-              │                                   │
-     ┌────────┴────────┐                 ┌────────┴─────────┐
-     │                 │                 │                  │
- Home / Categories   Price Data     Product Details      Profile
-     │                 │                 │                  │
-     └──────────┬──────┘                 └────────┬─────────┘
-                │                                 │
-             External API                   Better Auth
-                                                  │
-                                         MongoDB Atlas
-```
+Bazar Dor includes smaller interaction details that make the application feel complete:
+
+- Sticky navigation
+- Active category states
+- Horizontal mobile category navigation
+- Scrolling market price ticker
+- Bengali number formatting
+- Responsive authentication controls
+- Protected-route feedback
+- Redirect back after authentication
+- Sign in success feedback
+- Sign out success feedback
+- Profile update notifications
+- Loading skeletons
+- Custom 404 page
+- Product sorting
+- Responsive market tables
+- Remote profile image optimization
+- Consistent footer
+- Mobile, tablet, and desktop layouts
 
 ---
 
-## Technology Stack
+## Tech Stack
 
-| Layer                 | Technology                  |
-| --------------------- | --------------------------- |
-| Framework             | Next.js 16                  |
-| UI Library            | React 19                    |
-| Language              | TypeScript                  |
-| Styling               | Tailwind CSS 4              |
-| Authentication        | Better Auth                 |
-| Database              | MongoDB Atlas               |
-| Auth Database Adapter | Better Auth MongoDB Adapter |
-| Notifications         | React Hot Toast             |
-| Icons                 | Lucide React, React Icons   |
-| Price Ticker          | React Fast Marquee          |
-| Deployment            | Vercel                      |
+| Technology             | Role                                            |
+| ---------------------- | ----------------------------------------------- |
+| **Next.js 16**         | App Router, rendering, routing, protected pages |
+| **React 19**           | Component architecture and interactivity        |
+| **TypeScript**         | Type-safe application development               |
+| **Tailwind CSS 4**     | Responsive styling                              |
+| **Better Auth**        | Authentication and session management           |
+| **MongoDB Atlas**      | User and authentication database                |
+| **MongoDB Adapter**    | Better Auth database integration                |
+| **React Hot Toast**    | User feedback and notifications                 |
+| **React Fast Marquee** | Scrolling market price ticker                   |
+| **Lucide React**       | Interface icons                                 |
+| **React Icons**        | Social authentication icons                     |
+| **Next Image**         | Optimized local and remote images               |
+| **Vercel**             | Production deployment                           |
+
+---
+
+## Routes
+
+| Route              | Access    | Description                       |
+| ------------------ | --------- | --------------------------------- |
+| `/`                | Public    | Market dashboard and all products |
+| `/category/[slug]` | Public    | Category-based product listing    |
+| `/product/[slug]`  | Protected | Individual product details        |
+| `/signin`          | Public    | User sign in                      |
+| `/signup`          | Public    | User registration                 |
+| `/profile`         | Protected | User profile management           |
+
+Invalid routes and unavailable resources are handled through a dedicated Not Found experience.
 
 ---
 
@@ -169,19 +207,28 @@ src/
 ├── app/
 │   ├── (auth)/
 │   │   ├── signin/
+│   │   │   └── page.tsx
 │   │   └── signup/
+│   │       └── page.tsx
 │   │
 │   ├── api/
 │   │   └── auth/
+│   │       └── [...all]/
+│   │           └── route.ts
 │   │
 │   ├── category/
 │   │   └── [slug]/
+│   │       ├── loading.tsx
+│   │       └── page.tsx
 │   │
 │   ├── product/
 │   │   └── [slug]/
+│   │       └── page.tsx
 │   │
 │   ├── profile/
+│   │   └── page.tsx
 │   │
+│   ├── globals.css
 │   ├── layout.tsx
 │   ├── loading.tsx
 │   ├── not-found.tsx
@@ -207,98 +254,85 @@ src/
 
 ---
 
-## Main Routes
+## Data Source
 
-| Route              | Access    | Purpose                         |
-| ------------------ | --------- | ------------------------------- |
-| `/`                | Public    | Home dashboard and all products |
-| `/category/[slug]` | Public    | Category-based product listing  |
-| `/product/[slug]`  | Protected | Detailed product information    |
-| `/signin`          | Public    | User authentication             |
-| `/signup`          | Public    | Account registration            |
-| `/profile`         | Protected | Profile management              |
-| Unknown route      | Public    | Custom 404 experience           |
+Market data is loaded from the Bazar Dor API.
 
----
-
-## Authentication Flow
-
-```text
-Email / Google / GitHub
-          ↓
-      Better Auth
-          ↓
-     MongoDB Atlas
-          ↓
-    Session Created
-          ↓
- Authenticated Access
-```
-
----
-
-## Data Layer
-
-The application consumes the Bazar Dor API:
+**Base API**
 
 ```text
 https://api.api-store.workers.dev/api/bazardor
 ```
 
-Primary resources:
+**Products**
 
 ```text
-/products
-/categories
+https://api.api-store.workers.dev/api/bazardor/products
 ```
 
-Application-level filtering is used for:
+**Categories**
 
-- Category products
-- Product lookup
-- Price sorting
-- Rising prices
-- Falling prices
+```text
+https://api.api-store.workers.dev/api/bazardor/categories
+```
+
+Application-level filtering is used for category products and individual product lookup.
 
 ---
 
-## Loading & Error Experience
+## Authentication & Database
 
-The application includes dedicated UI states for better user experience:
+Authentication is managed through Better Auth and MongoDB Atlas.
 
-- Home loading skeleton
-- Category loading skeleton
-- Custom 404 page
-- Authentication errors
-- Protected-route notification
-- Sign in and sign out feedback
-- Profile update feedback
+```text
+User
+ ↓
+Email / Google / GitHub
+ ↓
+Better Auth
+ ↓
+MongoDB Atlas
+ ↓
+Session
+ ↓
+Authenticated Experience
+```
+
+MongoDB stores authentication-related collections including:
+
+```text
+user
+account
+session
+```
+
+Protected pages validate the current user session before allowing access.
 
 ---
 
-## Responsive Design
-
-The interface is designed for:
+## Protected Route Flow
 
 ```text
-Mobile
-  ↓
-Tablet
-  ↓
-Desktop
+Product Card
+     ↓
+Product Details
+     ↓
+Session Check
+     ↓
+ ┌───────────────┐
+ │ Authenticated? │
+ └───────┬───────┘
+         │
+    Yes  │  No
+     ↓   │   ↓
+ Details │ Sign In
+         │   ↓
+         │ Authenticate
+         │   ↓
+         └→ Original Product
 ```
 
-Responsive behavior includes:
-
-- Compact authentication controls
-- Horizontally scrollable category navigation
-- Responsive product grids
-- Mobile-friendly cards
-- Responsive authentication pages
-- Adaptive profile layout
-- Scrollable market price tables
-- Responsive footer
-- Optimized user avatar handling
+This allows users to continue exactly where they left off after signing in.
 
 ---
 
@@ -319,11 +353,11 @@ GITHUB_CLIENT_ID=your_github_client_id
 GITHUB_CLIENT_SECRET=your_github_client_secret
 ```
 
-> Never commit authentication credentials or environment files to source control.
+Environment files are excluded from version control.
 
 ---
 
-## Local Development
+## Run Locally
 
 Install dependencies:
 
@@ -331,7 +365,9 @@ Install dependencies:
 npm install
 ```
 
-Configure the required environment variables and start the development server:
+Create the required `.env` file and configure the environment variables.
+
+Start the development server:
 
 ```bash
 npm run dev
@@ -345,27 +381,22 @@ http://localhost:3000
 
 ---
 
-## Quality Checks
+## Scripts
 
-Before production deployment:
-
-```bash
-npm run lint
-```
-
-```bash
-npm run build
-```
-
-The project is configured to pass both linting and production build validation.
+| Command         | Purpose                      |
+| --------------- | ---------------------------- |
+| `npm run dev`   | Start the development server |
+| `npm run lint`  | Run ESLint                   |
+| `npm run build` | Create a production build    |
+| `npm run start` | Run the production build     |
 
 ---
 
-## Production Deployment
+## Production Setup
 
-The application is deployed with **Vercel** and connected to **MongoDB Atlas**.
+The production application is deployed on Vercel and connected to MongoDB Atlas.
 
-Production authentication requires the following environment variables:
+Production environment variables:
 
 ```text
 MONGODB_URI
@@ -375,12 +406,6 @@ GOOGLE_CLIENT_ID
 GOOGLE_CLIENT_SECRET
 GITHUB_CLIENT_ID
 GITHUB_CLIENT_SECRET
-```
-
-Production URL:
-
-```text
-https://bazardor-market.vercel.app
 ```
 
 OAuth callback routes:
@@ -395,20 +420,31 @@ GitHub
 
 ---
 
+## Responsive Layout
+
+| Device      | Experience                                                     |
+| ----------- | -------------------------------------------------------------- |
+| **Mobile**  | Compact navigation, single-column cards, scrollable categories |
+| **Tablet**  | Balanced multi-column product layouts                          |
+| **Desktop** | Expanded dashboard, product grid, and market comparison view   |
+
+Every major part of the application including navigation, hero content, product cards, category pages, product details, authentication pages, profile page, market table, and footer is responsive.
+
+---
+
 ## Production Verification
 
-The live application has been verified for:
+The deployed application has been verified for:
 
-- Email/password signup
-- Email/password sign in
+- Email and password signup
+- Email and password sign in
 - Google authentication
 - GitHub authentication
 - MongoDB Atlas connectivity
-- Authenticated sessions
 - Protected product routes
 - Redirect-back authentication flow
 - Sign out
-- Profile updates
+- User profile updates
 - Persistent profile data
 - Responsive Navbar
 - Responsive Footer
@@ -418,33 +454,10 @@ The live application has been verified for:
 
 ---
 
-## Engineering Highlights
-
-This project demonstrates practical implementation of:
-
-- Next.js App Router architecture
-- Server and Client Components
-- Dynamic routes
-- Protected server routes
-- OAuth authentication
-- Database-backed sessions
-- MongoDB integration
-- Authentication-aware navigation
-- Bengali localization
-- Client-side sorting
-- API-driven rendering
-- Loading skeletons
-- Error handling
-- Responsive UI architecture
-- Production OAuth configuration
-- Production deployment workflow
-
----
-
 <div align="center">
 
-### Bazar Dor
+### Know the market. Compare the price. Buy with clarity.
 
-**Essential market prices. Clear insights. One Bengali platform.**
+[**Open Bazar Dor →**](https://bazardor-market.vercel.app)
 
 </div>
